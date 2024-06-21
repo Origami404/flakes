@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, inputs, helix, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports =
@@ -47,7 +47,7 @@
 
     # Shell & Editor
     fish      # better shell
-    helix.packages."${pkgs.system}".helix
+    #helix.packages."${pkgs.system}".helix
     
     # Archives
     zip
@@ -137,13 +137,18 @@
   security.sudo.wheelNeedsPassword = false;
   sops.defaultSopsFile = ./secrets/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
-  sops.age.keyFile = "/home/origami/.config/sops/age/keys.txt"
+  sops.age.keyFile = "/home/origami/.config/sops/age/keys.txt";
 
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
   system.stateVersion = "23.11";
+
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "vscode"
+    ];
 }
 
 
