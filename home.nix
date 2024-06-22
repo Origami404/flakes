@@ -19,6 +19,7 @@
     # Desktop Utils
     gnome3.gnome-tweaks
     telegram-desktop
+    qq
   ];
 
   # An Apple Music client, only can be downloaded after purchasing
