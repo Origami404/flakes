@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   home.username = "origami";
@@ -8,7 +8,7 @@
 
   home.packages = with pkgs;[
     # Shell & Editor
-    fish 
+    fish
 
     # Archives
     atool # all-in-one tar
@@ -98,7 +98,7 @@
       "cloc" = "scc";
       "cat" = "bat";
       "x" = "atool -x";
-      "flake-update" = "nixos-rebuild switch --use-remote-sudo --flake /home/origami/flakes#um790-nix";
+      "flake-update" = "nixos-rebuild switch --use-remote-sudo --flake ${config.home.homeDirectory}/flakes#um790-nix";
       "cl" = "clear";
     };
   };
