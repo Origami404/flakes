@@ -36,8 +36,8 @@
     nmap
 
     # Misc
+    grc
     neofetch
-
 
     # system call monitoring
     strace # system call monitoring
@@ -49,6 +49,7 @@
     telegram-desktop
   ];
 
+  programs.fzf.enableFishIntegration = false; # use fish.fzf keybinding
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
@@ -57,8 +58,34 @@
     plugins = with pkgs.fishPlugins; [
       { name = "z"; src = z.src; }
       { name = "grc"; src = grc.src; }
-      { name = "fzf"; src = fzf.src; }
+      { name = "fzf-fish"; src = fzf-fish.src; }
+      { name = "autopair"; src = autopair.src; }
+      { name = "colored-man-pages"; src = colored-man-pages.src; }
     ];
+    shellInit = ''
+      fzf_configure_bindings --directory=\cp --git_log=\cl --history=\cr \
+        --git_status= --processes= --variables=
+    '';
+    shellAbbrs = {
+      "..." = "../..";
+      "...." = "../../..";
+    };
+    shellAliases = {
+      "ls" = "eza";
+      "ll" = "eza -l";
+      "la" = "eza -a";
+      "grep" = "rg";
+      "top" = "btop";
+      "dig" = "q";
+      "find" = "fd";
+      "du" = "dust";
+      "df" = "duf";
+      "cloc" = "scc";
+      "cat" = "bat";
+      "x" = "atool -x";
+      "flake-update" = "nixos-rebuild switch --use-remote-sudo --flake /home/origami/flakes#um790-nix";
+      "cl" = "clear";
+    };
   };
 
   programs.vscode = {
