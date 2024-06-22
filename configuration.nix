@@ -72,6 +72,7 @@
 
     # Desktop Utils
     chromium # Web browser
+    appimage-run
   ];
 
   fonts = {
