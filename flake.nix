@@ -2,12 +2,11 @@
   description = "Origami404's NixOS Flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    helix.url = "github:helix-editor/helix/85fce2f5b6c9f35ab9d3361f3933288a28db83d4";
     sops-nix.url = "github:Mic92/sops-nix";
   };
 
