@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.sops-nix.nixosModules.sops
     ];
@@ -24,13 +25,13 @@
     };
   };
 
-  networking.hostName = "um790-nix"; 
-  networking.networkmanager.enable = true; 
+  networking.hostName = "um790-nix";
+  networking.networkmanager.enable = true;
 
   time.timeZone = "Asia/Shanghai";
 
   nix.settings = {
-    trusted-users = ["origami"];
+    trusted-users = [ "origami" ];
     substituters = [
       "https://mirrors.ustc.edu.cn/nix-channels/store"
     ];
@@ -45,50 +46,50 @@
     curl
 
     # Shell & Editor
-    fish      # better shell
+    fish # better shell
     #helix.packages."${pkgs.system}".helix
-    
+
     # Archives
     zip
     xz
     unzip
     p7zip
     zstd
-    gnutar  
-    atool     # all-in-one tar
+    gnutar
+    atool # all-in-one tar
 
     # Modern unix
-    ripgrep   # better grep
-    jq        # better cat on json
-    bat       # better cat on everything
-    eza       # better ls
-    fzf       # A command-line fuzzy finder
-    du-dust   # better du
-    duf       # better df
-    fd        # better find
-    btop      # better top
-    procs     # better ps
-    zoxide    # better cd
-    scc       # better cloc
+    ripgrep # better grep
+    jq # better cat on json
+    bat # better cat on everything
+    eza # better ls
+    fzf # A command-line fuzzy finder
+    du-dust # better du
+    duf # better df
+    fd # better find
+    btop # better top
+    procs # better ps
+    zoxide # better cd
+    scc # better cloc
 
     # Networking
-    mtr       # better traceroute
-    iperf3   
-    q         # better dig/nslookup
-    socat     # better netcat
-    nmap 
+    mtr # better traceroute
+    iperf3
+    q # better dig/nslookup
+    socat # better netcat
+    nmap
 
     # Misc
     file
     which
     tree
-    gnused    # sed
-    gawk      # awk
+    gnused # sed
+    gawk # awk
     gnupg
-    pciutils  # lspci
-    usbutils  # lsusb
+    pciutils # lspci
+    usbutils # lsusb
     neofetch
-    v2raya    # Only for Chinese user
+    v2raya # Only for Chinese user
 
     # nix related
     #
@@ -96,14 +97,15 @@
     # with more details log output
     nix-output-monitor
     nixd
+    nixpkgs-fmt
 
     # system call monitoring
-    strace   # system call monitoring
-    ltrace   # library call monitoring
-    lsof     # list open files
+    strace # system call monitoring
+    ltrace # library call monitoring
+    lsof # list open files
 
     # Desktop Utils
-    chromium    # Web browser
+    chromium # Web browser
     gnome3.gnome-tweaks
   ];
 
@@ -123,7 +125,7 @@
       emoji = [ "Noto Color Emoji" ];
     };
   };
-      
+
 
   #programs.hyprland.enable = true;
   services.xserver = {
@@ -134,7 +136,7 @@
 
   # Users
   programs.fish.enable = true;
-  
+
   users.groups.origami.gid = 1000;
   users.users.origami = {
     isNormalUser = true;
@@ -143,7 +145,7 @@
     group = "origami";
     extraGroups = [ "networkmanager" "wheel" ];
     openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAZxRoweHoLfoaydPqhsLnc4EGgwTp7Uz1DZ2DG447B+ origami@fedora"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAZxRoweHoLfoaydPqhsLnc4EGgwTp7Uz1DZ2DG447B+ origami@fedora"
     ];
   };
   security.sudo.wheelNeedsPassword = false;
