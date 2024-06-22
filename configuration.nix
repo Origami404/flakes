@@ -103,14 +103,26 @@
     lsof     # list open files
 
     # Desktop Utils
-    kitty       # Terminal emulator
-    wofi        # Application runner
     chromium    # Web browser
-    dunst       # Notication daemon
-    pipewire    # Sound manager
-    wireplumber 
-    waybar      # Status bar  
+    gnome3.gnome-tweaks
   ];
+
+  fonts = {
+    enableDefaultPackages = false;
+    packages = with pkgs; [
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+      lxgw-wenkai
+      (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
+    ];
+    fontconfig.defaultFonts = pkgs.lib.mkForce {
+      serif = [ "Noto Serif CJK SC Bold" "Noto Serif" ];
+      sansSerif = [ "Noto Sans CJK SC Bold" "Noto Sans" ];
+      monospace = [ "CaskaydiaCove Nerd" ];
+      emoji = [ "Noto Color Emoji" ];
+    };
+  };
       
 
   #programs.hyprland.enable = true;
