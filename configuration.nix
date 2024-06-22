@@ -22,6 +22,7 @@
     grub = {
       efiSupport = true;
       device = "nodev";
+      configurationLimit = 10;
     };
   };
 
@@ -35,6 +36,13 @@
     substituters = [
       "https://mirrors.ustc.edu.cn/nix-channels/store"
     ];
+    auto-optimise-store = true;
+  };
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 1w";
   };
 
   # List packages installed in system profile. To search, run:
