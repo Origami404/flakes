@@ -68,6 +68,7 @@
     nix-output-monitor
     nixd
     nixpkgs-fmt
+    nix-index
 
     # Desktop Utils
     chromium # Web browser
