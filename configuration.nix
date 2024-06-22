@@ -30,10 +30,9 @@
   time.timeZone = "Asia/Shanghai";
 
   nix.settings = {
-    extra-trusted-users = ["origami"];
-    extra-substituters = [
-      "https://mirror.tuna.edu.cn/nix-channels/store"
-      "https://cache.nixos.org"
+    trusted-users = ["origami"];
+    substituters = [
+      "https://mirrors.ustc.edu.cn/nix-channels/store"
     ];
   };
 
