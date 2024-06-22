@@ -107,6 +107,7 @@
     # Desktop Utils
     chromium # Web browser
     gnome3.gnome-tweaks
+    telegram-desktop
   ];
 
   fonts = {
