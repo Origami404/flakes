@@ -58,6 +58,12 @@
       categories = [ "Application" ];
     };
   };
+
+  programs.nix-index = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
   programs.fzf.enableFishIntegration = false; # use fish.fzf keybinding
   programs.fish = {
     enable = true;
