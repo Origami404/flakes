@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     sops-nix.url = "github:Mic92/sops-nix";
@@ -19,10 +19,13 @@
           ./configuration.nix
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.origami = import ./home.nix;
-            home-manager.extraSpecialArgs = inputs;
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.origami = import ./home.nix;
+              extraSpecialArgs = inputs;
+              backupFileExtension = "bak";
+            };
           }
         ];
       };

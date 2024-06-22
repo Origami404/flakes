@@ -45,10 +45,6 @@
     wget
     curl
 
-    # Shell & Editor
-    fish # better shell
-    #helix.packages."${pkgs.system}".helix
-
     # Archives
     zip
     xz
@@ -56,28 +52,6 @@
     p7zip
     zstd
     gnutar
-    atool # all-in-one tar
-
-    # Modern unix
-    ripgrep # better grep
-    jq # better cat on json
-    bat # better cat on everything
-    eza # better ls
-    fzf # A command-line fuzzy finder
-    du-dust # better du
-    duf # better df
-    fd # better find
-    btop # better top
-    procs # better ps
-    zoxide # better cd
-    scc # better cloc
-
-    # Networking
-    mtr # better traceroute
-    iperf3
-    q # better dig/nslookup
-    socat # better netcat
-    nmap
 
     # Misc
     file
@@ -88,26 +62,15 @@
     gnupg
     pciutils # lspci
     usbutils # lsusb
-    neofetch
     v2raya # Only for Chinese user
 
-    # nix related
-    #
-    # it provides the command `nom` works just like `nix`
-    # with more details log output
+    # Nix related
     nix-output-monitor
     nixd
     nixpkgs-fmt
 
-    # system call monitoring
-    strace # system call monitoring
-    ltrace # library call monitoring
-    lsof # list open files
-
     # Desktop Utils
     chromium # Web browser
-    gnome3.gnome-tweaks
-    telegram-desktop
   ];
 
   fonts = {
@@ -152,7 +115,6 @@
 
   # Users
   programs.fish.enable = true;
-
   users.groups.origami.gid = 1000;
   users.users.origami = {
     isNormalUser = true;
