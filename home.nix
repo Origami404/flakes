@@ -9,6 +9,7 @@
   imports = [
     (import ./modules/shell.nix)
     (import ./modules/desktop.nix)
+    (import ./modules/develop.nix)
   ];
 
   home.packages = with pkgs;[
@@ -18,8 +19,6 @@
     lsof # list open files
   ];
   programs.nix-index.enable = true;
-  programs.vscode.enable = true;
 
   home.stateVersion = "23.11";
-
 }
