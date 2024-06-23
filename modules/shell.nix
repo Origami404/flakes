@@ -16,6 +16,11 @@
     btop # better top
     grc # log file colorize
     neofetch # tool for showing off 
+    mtr       # better traceroute
+    iperf3    
+    q         # better dig/nslookup
+    socat     # better netcat
+    nmap 
   ];
 
   programs.nix-index.enableFishIntegration = true;
@@ -47,6 +52,8 @@
       "grep" = "rg";
       "top" = "btop";
       "dig" = "q";
+      "nc" = "socat";
+      "netcat" = "socat";
       "find" = "fd";
       "du" = "dust";
       "df" = "duf";
