@@ -124,8 +124,8 @@
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
+  services.xserver.excludePackages = [ pkgs.xterm ];
   environment.gnome.excludePackages = (with pkgs; [
-    xterm
     gnome-photos
     gnome-tour
     gnome-connections
