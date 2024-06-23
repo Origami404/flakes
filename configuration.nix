@@ -77,6 +77,7 @@
     nixd
     nixpkgs-fmt
     nix-index
+    nix-tree
 
     # Desktop Utils
     gnome3.gnome-tweaks
@@ -123,6 +124,27 @@
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
+  environment.gnome.excludePackages = (with pkgs; [
+    xterm
+    gnome-photos
+    gnome-tour
+    gnome-connections
+  ]) ++ (with pkgs.gnome; [
+    cheese # webcam tool
+    gnome-music
+    epiphany # web browser
+    geary # email reader
+    gnome-characters
+    totem # video player
+    tali # poker game
+    iagno # go game
+    hitori # sudoku game
+    atomix # puzzle game
+    gnome-clocks
+    gnome-weather
+    gnome-contacts
+    simple-scan
+  ]);
 
   # Users
   programs.fish.enable = true;

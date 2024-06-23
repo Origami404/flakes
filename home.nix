@@ -10,6 +10,7 @@
     (import ./modules/shell.nix)
     (import ./modules/desktop.nix)
     (import ./modules/develop.nix)
+    (import ./modules/gnome-dconf.nix)
   ];
 
   home.packages = with pkgs;[
