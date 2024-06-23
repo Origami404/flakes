@@ -79,6 +79,7 @@
     nix-index
 
     # Desktop Utils
+    gnome3.gnome-tweaks
     chromium # Web browser
     appimage-run
   ];

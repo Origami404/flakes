@@ -18,6 +18,7 @@
     neofetch # tool for showing off 
   ];
 
+  programs.nix-index.enableFishIntegration = true;
   programs.fzf.enableFishIntegration = false; # use fish.fzf keybinding
   programs.fish = {
     enable = true;
