@@ -9,5 +9,10 @@
     "ipy" = "ipython --no-confirm-exit";
   };
 
+  programs.direnv.enable = true;
+  programs.fish.shellInit = ''
+    direnv hook fish | source
+  '';
+
   programs.vscode.enable = true;
 }
