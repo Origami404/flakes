@@ -3,6 +3,9 @@
 # to /etc/nixos/configuration.nix instead.
 { config, lib, pkgs, modulesPath, ... }:
 
+let
+  btrfs-options = "rw,noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,commit=120";
+in
 {
   imports =
     [ (modulesPath + "/installer/scan/not-detected.nix")
@@ -16,13 +19,13 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/1b3938f0-358f-4358-b7fb-b448b6eba56a";
       fsType = "btrfs";
-      options = [ "subvol=@nixos" ];
+      options = [ "${btrfs-options},subvol=@nixos" ];
     };
 
   fileSystems."/nix" =
     { device = "/dev/disk/by-uuid/1b3938f0-358f-4358-b7fb-b448b6eba56a";
       fsType = "btrfs";
-      options = [ "subvol=@nix" ];
+      options = [ "${btrfs-options},subvol=@nix" ];
     };
 
   fileSystems."/boot/efi" =
@@ -33,10 +36,14 @@
   fileSystems."/home" =
     { device = "/dev/disk/by-uuid/1b3938f0-358f-4358-b7fb-b448b6eba56a";
       fsType = "btrfs";
-      options = [ "subvol=@home" ];
+      options = [ "${btrfs-options},subvol=@home" ];
     };
 
- 
+  fileSystems."/var/lib/docker" = 
+    { device = "/dev/disk/by-uuid/1b3938f0-358f-4358-b7fb-b448b6eba56a";
+      fsType = "btrfs";
+      options = [ "${btrfs-options},subvol=@docker" ];
+    };
 
   swapDevices = [ ];
 
