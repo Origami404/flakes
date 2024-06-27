@@ -146,6 +146,8 @@
     simple-scan
   ]);
 
+  services.tailscale.enable = true;
+
   # Users
   programs.fish.enable = true;
   users.groups.origami.gid = 1000;
@@ -173,7 +175,9 @@
   nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
       "vscode"
+      "code"
       "qq"
+      "feishu"
     ];
 }
 
