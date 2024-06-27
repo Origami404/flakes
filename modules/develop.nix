@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }:
 {
   home.packages = with pkgs; [
+    lldb
     clang-tools
     python312
     python312Packages.ipython
@@ -31,5 +32,8 @@
     };
   };
 
-  programs.vscode.enable = true;
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscode.fhs;
+  };
 }
