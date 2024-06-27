@@ -3,6 +3,8 @@
   home.packages = with pkgs; [
     telegram-desktop
     qq
+    mpv
+    feishu
   ];
 
   # An Apple Music client, only can be downloaded after purchasing
