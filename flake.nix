@@ -27,6 +27,12 @@
         modules = [ ./home/um790.nix ];
         extraSpecialArgs = { inherit inputs; };
       };
+
+      "origami@metis" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        modules = [ ./home/metis.nix ];
+        extraSpecialArgs = { inherit inputs; };
+      };
     };
   };
 }
