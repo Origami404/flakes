@@ -73,6 +73,7 @@
     v2raya # Only for Chinese user
 
     # Nix related
+    home-manager
     nix-output-monitor
     nixd
     nixpkgs-fmt
@@ -171,14 +172,6 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
   system.stateVersion = "23.11";
-
-  nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (lib.getName pkg) [
-      "vscode"
-      "code"
-      "qq"
-      "feishu"
-    ];
 }
 
 

@@ -1,10 +1,13 @@
 { pkgs, lib, config, ... }:
 {
   home.packages = with pkgs; [
+    desktop-file-utils
+
     telegram-desktop
     qq
     mpv
     feishu
+    moonlight-qt
   ];
 
   # An Apple Music client, only can be downloaded after purchasing

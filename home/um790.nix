@@ -13,6 +13,7 @@
     (import ./modules/gnome-dconf.nix)
   ];
 
+  nixpkgs.config.allowUnfreePredicate = _: true;
   home.packages = with pkgs;[
     # system call monitoring
     strace # system call monitoring

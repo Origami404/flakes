@@ -17,17 +17,15 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.origami = import ./home.nix;
-              extraSpecialArgs = inputs;
-              backupFileExtension = "bak";
-            };
-          }
         ];
+      };
+    };
+
+    homeConfigurations = {
+      "origami@um790-nix" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        modules = [ ./home/um790.nix ];
+        extraSpecialArgs = { inherit inputs; };
       };
     };
   };
