@@ -91,15 +91,13 @@
     packages = with pkgs; [
       noto-fonts
       noto-fonts-cjk
-      noto-fonts-emoji
       lxgw-wenkai
       (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
     ];
     fontconfig.defaultFonts = pkgs.lib.mkForce {
-      serif = [ "Noto Serif CJK SC Bold" "Noto Serif" ];
-      sansSerif = [ "Noto Sans CJK SC Bold" "Noto Sans" ];
+      serif = [ "Noto Serif CJK SC Regular" "Noto Serif" ];
+      sansSerif = [ "Noto Sans CJK SC Regular" "Noto Sans" ];
       monospace = [ "CaskaydiaCove Nerd" ];
-      emoji = [ "Noto Color Emoji" ];
     };
   };
 
