@@ -45,6 +45,12 @@ in
       options = [ "${btrfs-options},subvol=@docker" ];
     };
 
+  fileSystems."/var/lib/libvirt" = 
+    { device = "/dev/disk/by-uuid/1b3938f0-358f-4358-b7fb-b448b6eba56a";
+      fsType = "btrfs";
+      options = [ "subvol=@libvirt" ];
+    };
+
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

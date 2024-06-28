@@ -147,6 +147,7 @@
     simple-scan
   ]);
 
+  virtualisation.libvirtd.enable = true;
   services.tailscale.enable = true;
 
   # Users
