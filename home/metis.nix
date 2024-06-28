@@ -7,8 +7,8 @@
   programs.home-manager.enable = true;
 
   imports = [
-    (import ./modules/shell.nix)
-    (import ./modules/shell-develop.nix)
+    ./modules/shell.nix
+    ./modules/shell-develop.nix
   ];
 
   nixpkgs.config.allowUnfreePredicate = _: true;

@@ -7,11 +7,11 @@
   programs.home-manager.enable = true;
 
   imports = [
-    (import ./modules/shell.nix)
-    (import ./modules/desktop.nix)
-    (import ./modules/shell-develop.nix)
-    (import ./modules/vscode.nix)
-    (import ./modules/gnome-dconf.nix)
+    ./modules/shell.nix
+    ./modules/desktop.nix
+    ./modules/shell-develop.nix
+    ./modules/vscode.nix
+    ./modules/gnome-dconf.nix
   ];
 
   nixpkgs.config.allowUnfreePredicate = _: true;
