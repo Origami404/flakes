@@ -60,7 +60,7 @@
       "cloc" = "scc";
       "cat" = "bat";
       "x" = "atool -x";
-      "flake-update" = "nixos-rebuild switch --use-remote-sudo --flake ${config.home.homeDirectory}/flakes#um790-nix";
+      "flake-update" = "nixos-rebuild switch --use-remote-sudo --flake ${config.home.homeDirectory}/flakes#eris";
       "cl" = "clear";
     };
   };

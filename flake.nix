@@ -12,28 +12,27 @@
 
   outputs = { nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations = {
-      "um790-nix" = nixpkgs.lib.nixosSystem {
+      "eris" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./configuration.nix
+          ./hosts/eris/configuration.nix
         ];
       };
     };
 
     homeConfigurations = {
-      "origami@um790-nix" = home-manager.lib.homeManagerConfiguration {
+      "origami@eris" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        modules = [ ./home/um790.nix ];
+        modules = [ ./home/hosts/eris.nix ];
         extraSpecialArgs = { inherit inputs; };
       };
 
       "origami@metis" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        modules = [ ./home/metis.nix ];
+        modules = [ ./home/hosts/metis.nix ];
         extraSpecialArgs = { inherit inputs; };
       };
     };
   };
 }
-

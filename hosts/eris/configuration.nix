@@ -26,7 +26,7 @@
     };
   };
 
-  networking.hostName = "um790-nix";
+  networking.hostName = "eris";
   networking.networkmanager.enable = true;
 
   time.timeZone = "Asia/Shanghai";
@@ -172,5 +172,4 @@
   services.openssh.enable = true;
   system.stateVersion = "23.11";
 }
-
 
