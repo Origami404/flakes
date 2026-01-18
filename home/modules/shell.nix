@@ -7,7 +7,7 @@
     bat # better cat on everything
     eza # better ls
     fzf # A command-line fuzzy finder
-    du-dust # better du
+    dust # better du
     duf # better df
     fd # better find
     btop # better top
@@ -60,7 +60,6 @@
       "cloc" = "scc";
       "cat" = "bat";
       "x" = "atool -x";
-      "flake-update" = "nixos-rebuild switch --use-remote-sudo --flake ${config.home.homeDirectory}/flakes#eris";
       "cl" = "clear";
     };
   };
