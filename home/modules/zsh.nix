@@ -4,12 +4,12 @@
     enable = true;
     plugins = [
       {
-        name = "zsh-autocomplete";
+        name = "zsh-autosuggestions";
         src = pkgs.fetchFromGitHub {
-          owner = "marlonrichert";
-          repo = "zsh-autocomplete";
-          rev = "25.03.19";
-          sha256 = "sha256-/6V6IHwB5p0GT1u5SAiUa20LjFDSrMo731jFBq/bnpw=";
+          owner = "zsh-users";
+          repo = "zsh-autosuggestions";
+          rev = "v0.7.1";
+          hash = "sha256-vpTyYq9ZgfgdDsWzjxVAE7FZH4MALMNZIFyEOBLm5Qo=";
         };
       }
     ];
