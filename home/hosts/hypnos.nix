@@ -7,7 +7,7 @@
     ../modules/common.nix
     ../modules/shell.nix
     ../modules/shell-develop.nix
-    ../modules/vscode.nix
+    ../modules/zsh.nix
     ../modules/darwin-packages.nix
   ];
 

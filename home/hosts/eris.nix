@@ -6,6 +6,7 @@
   imports = [
     ../modules/common.nix
     ../modules/shell.nix
+    ../modules/zsh.nix
     ../modules/desktop.nix
     ../modules/shell-develop.nix
     ../modules/vscode.nix

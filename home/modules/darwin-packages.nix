@@ -18,18 +18,6 @@
       uv
       typst
       pandoc
-
-      # localsend
-
-      # zotero
-      # logseq
-      # telegram-desktop
-
-      # unnaturalscrollwheels
-
-      # noto-fonts-cjk-sans
-      # sarasa-gothic
-      # source-code-pro
     ])
     ;
 }
