@@ -12,7 +12,9 @@
     ../modules/llm.nix
   ];
 
-  programs.fish.shellAliases = {
-    "flake-update" = "home-manager switch --flake ${config.home.homeDirectory}/flakes#origami@hypnos";
+  programs.zsh.shellAliases = {
+    "hm-update" = "home-manager switch --flake ${config.home.homeDirectory}/flakes#origami@hypnos";
   };
+  # 外壳同款配色
+  programs.zsh.initContent = "zstyle ':prompt:grml:*:items:user' pre '%F{#82C8E5}'";
 }
