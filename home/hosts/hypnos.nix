@@ -8,6 +8,7 @@
     ../modules/shell.nix
     ../modules/shell-develop.nix
     ../modules/vscode.nix
+    ../modules/darwin-packages.nix
   ];
 
   programs.fish.shellAliases = {
