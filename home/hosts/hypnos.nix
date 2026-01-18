@@ -9,6 +9,7 @@
     ../modules/shell-develop.nix
     ../modules/zsh.nix
     ../modules/darwin-packages.nix
+    ../modules/llm.nix
   ];
 
   programs.fish.shellAliases = {
