@@ -8,5 +8,6 @@
     ../modules/shell.nix
     ../modules/zsh.nix
     ../modules/shell-develop.nix
+    ../modules/ssh.nix
   ];
 }

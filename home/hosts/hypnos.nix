@@ -14,6 +14,7 @@
     ../modules/shell-develop.nix
     ../modules/zsh.nix
     ../modules/llm.nix
+    ../modules/ssh.nix
   ];
 
   programs.zsh.shellAliases = {

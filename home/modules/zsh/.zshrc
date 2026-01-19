@@ -12,6 +12,7 @@ source "$ZSHD/pdf.zsh"
 source "$ZSHD/completion.zsh"
 source "$ZSHD/modern-utils.zsh"
 source "$ZSHD/develop.zsh"
+source "$ZSHD/nix.zsh"
 
 # allow using # at begin
 setopt interactivecomments

@@ -45,6 +45,7 @@
         pkgs = nixpkgs-linux.legacyPackages.x86_64-linux;
         modules = [
           { nixpkgs.config.allowUnfreePredicate = _: true; }
+          inputs.sops-nix.homeManagerModules.sops
           ./home/hosts/eris.nix
         ];
         extraSpecialArgs = { inherit inputs; };
@@ -54,6 +55,7 @@
         pkgs = nixpkgs-linux.legacyPackages.x86_64-linux;
         modules = [
           { nixpkgs.config.allowUnfreePredicate = _: true; }
+          inputs.sops-nix.homeManagerModules.sops
           ./home/hosts/metis.nix
         ];
         extraSpecialArgs = { inherit inputs; };
@@ -63,6 +65,7 @@
         pkgs = nixpkgs-darwin.legacyPackages.aarch64-darwin;
         modules = [
           { nixpkgs.config.allowUnfreePredicate = _: true; }
+          inputs.sops-nix.homeManagerModules.sops
           ./home/hosts/hypnos.nix
         ];
         extraSpecialArgs = { inherit inputs; };

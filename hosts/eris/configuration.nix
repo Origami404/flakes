@@ -161,7 +161,7 @@
     ];
   };
   security.sudo.wheelNeedsPassword = false;
-  sops.defaultSopsFile = ./secrets/secrets.yaml;
+  sops.defaultSopsFile = ../../secrets/ssh-private.yaml;
   sops.defaultSopsFormat = "yaml";
   sops.age.keyFile = "/home/origami/.config/sops/age/keys.txt";
 
@@ -171,4 +171,3 @@
   services.openssh.enable = true;
   system.stateVersion = "23.11";
 }
-

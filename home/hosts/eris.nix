@@ -11,6 +11,7 @@
     ../modules/shell-develop.nix
     ../modules/vscode.nix
     ../modules/gnome-dconf.nix
+    ../modules/ssh.nix
   ];
 
   home.packages = with pkgs;[
