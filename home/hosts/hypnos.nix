@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   home.homeDirectory = "/Users/origami";
@@ -8,7 +13,6 @@
     ../modules/shell.nix
     ../modules/shell-develop.nix
     ../modules/zsh.nix
-    ../modules/darwin-packages.nix
     ../modules/llm.nix
   ];
 
@@ -17,4 +21,35 @@
   };
   # 外壳同款配色
   programs.zsh.initContent = "zstyle ':prompt:grml:*:items:user' pre '%F{#82C8E5}'";
+
+  # 包
+  home.packages = (
+    with pkgs;
+    [
+      # 标准 GNU 工具
+      autoconf
+      coreutils
+      gawk
+      gnused
+      gnutar
+      gnugrep
+      gnumake
+      pkgconf
+      unar
+
+      # 命令行小工具
+      helix
+      uv
+      typst
+      pandoc
+
+      # NixOS
+      nix-output-monitor
+      nixd
+      nixfmt
+      nixpkgs-fmt
+      nix-index
+      nix-tree
+    ]
+  );
 }
