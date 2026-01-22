@@ -8,10 +8,8 @@
   };
   home.shell.enableZshIntegration = true;
 
-  home.file.".zsh.d" = {
-    source = ./zsh/.zsh.d;
-    recursive = true;
-  };
-  home.file.".zshrc.o4".source = ./zsh/.zshrc;
+  home.file =
+    (lib.origami404.standaloneToHome ".zsh.d")
+    // (lib.origami404.standaloneToHome { rel = ".zshrc"; realpath = ".zshrc.o4"; });
   programs.zsh.initContent = "source $HOME/.zshrc.o4";
 }

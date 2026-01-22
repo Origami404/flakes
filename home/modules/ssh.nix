@@ -5,10 +5,7 @@
     defaultSopsFile = ../../secrets/ssh-config.yaml;
   };
 
-  home.file.".ssh" = {
-    source = ./ssh;
-    recursive = true;
-  };
+  home.file = lib.origami404.standaloneToHome ".ssh";
 
   home.activation.sshDirPerms = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     if [ -d "$HOME/.ssh" ]; then

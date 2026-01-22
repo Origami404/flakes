@@ -48,7 +48,13 @@
           inputs.sops-nix.homeManagerModules.sops
           ./home/hosts/eris.nix
         ];
-        extraSpecialArgs = { inherit inputs; };
+        extraSpecialArgs = {
+          inherit inputs;
+          lib = import ./home/lib/origami404.nix {
+            hmSource = inputs.home-manager;
+            npLib = nixpkgs-linux.lib;
+          };
+        };
       };
 
       "origami@metis" = home-manager.lib.homeManagerConfiguration {
@@ -58,7 +64,13 @@
           inputs.sops-nix.homeManagerModules.sops
           ./home/hosts/metis.nix
         ];
-        extraSpecialArgs = { inherit inputs; };
+        extraSpecialArgs = {
+          inherit inputs;
+          lib = import ./home/lib/origami404.nix {
+            hmSource = inputs.home-manager;
+            npLib = nixpkgs-linux.lib;
+          };
+        };
       };
 
       "origami@hypnos" = home-manager-darwin.lib.homeManagerConfiguration {
@@ -68,7 +80,13 @@
           inputs.sops-nix.homeManagerModules.sops
           ./home/hosts/hypnos.nix
         ];
-        extraSpecialArgs = { inherit inputs; };
+        extraSpecialArgs = {
+          inherit inputs;
+          lib = import ./home/lib/origami404.nix {
+            hmSource = inputs.home-manager-darwin;
+            npLib = nixpkgs-darwin.lib;
+          };
+        };
       };
     };
   };
