@@ -16,6 +16,7 @@
     ../modules/llm.nix
     ../modules/ssh.nix
     ../modules/atuin.nix
+    ../modules/git.nix
   ];
 
   programs.zsh.shellAliases = {

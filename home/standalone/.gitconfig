@@ -1,0 +1,59 @@
+# User setting
+[user]
+	name = Origami404
+	email = Origami404@foxmail.com
+
+
+# Signing
+[commit]
+	gpgsign = false
+
+
+# Misc
+[init]
+	defaultBranch = main
+[core]
+	autocrlf = input
+	excludesfile = ~/.gitignore
+
+
+# CLI Adjustment
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[help]
+	autocorrect = prompt
+
+
+# Push and pull
+[push]
+	default = simple
+	autoSetupRemote = true
+	followTags = true
+[pull]
+	rebase = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+
+
+# Diff and merge
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
+[rerere]
+	enabled = true
+	autoupdate = true
+
+
+# Ref https://blog.gitbutler.com/how-git-core-devs-configure-git/

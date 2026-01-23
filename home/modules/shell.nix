@@ -58,7 +58,7 @@
       "du" = "dust";
       "df" = "duf";
       "cloc" = "scc";
-      "cat" = "bat";
+      # "cat" = "bat";
       "x" = "atool -x";
       "cl" = "clear";
     };
