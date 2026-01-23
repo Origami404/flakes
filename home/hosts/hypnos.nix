@@ -21,6 +21,8 @@
 
   programs.zsh.shellAliases = {
     "hm-update" = "home-manager switch --flake ${config.home.homeDirectory}/flakes#origami@hypnos";
+    "brew" = "/opt/homebrew/bin/brew";
+    "tailscale" = "/Applications/Tailscale.app/Contents/MacOS/Tailscale";
   };
   # 外壳同款配色
   programs.zsh.initContent = "zstyle ':prompt:grml:*:items:user' pre '%F{#82C8E5}'";
