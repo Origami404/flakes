@@ -55,6 +55,8 @@
       nixpkgs-fmt
       nix-index
       nix-tree
+      sops
+      age
     ]
   );
 }

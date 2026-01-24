@@ -20,8 +20,19 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "bak";
+    sharedModules = [
+      inputs.sops-nix.homeManagerModules.sops
+    ];
+    extraSpecialArgs = {
+      lib = import ../../home/lib/origami404.nix {
+        hmSource = inputs.home-manager-darwin;
+        npLib = inputs.nixpkgs-darwin.lib;
+      };
+    };
     users.origami = import ../../home/hosts/hypnos.nix;
   };
+
+  environment.systemPackages = with pkgs; [ home-manager ];
 
   nixpkgs.config.allowUnfreePredicate = _: true;
 
