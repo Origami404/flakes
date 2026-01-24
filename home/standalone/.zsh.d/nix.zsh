@@ -36,3 +36,17 @@ sops-update-file() {
   rm -f "$tmp"
   return $rc
 }
+
+sops-update-ssh-config () {( set -e
+    local SSH_CONFIG=$HOME/.ssh/config
+    local FLAKES=$HOME/flakes
+
+    $EDITOR $SSH_CONFIG
+    sops-update-file $SSH_CONFIG $FLAKES/secrets/ssh-config.yaml
+    pushd $FLAKES
+    if [[ -z "$(git status --porcelain)" ]]; then
+        git add .
+        git commit -m "[sops] update ssh config"
+    fi
+    popd
+)}

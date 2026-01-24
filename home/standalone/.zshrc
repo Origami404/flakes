@@ -20,9 +20,7 @@ setopt interactivecomments
 unsetopt extended_glob
 
 # alias
-export EDITOR=helix
-alias edit=$EDITOR
-alias vim=helix
+export EDITOR=hx
 alias dc="docker compose"
 
 export PATH="$HOME/.local/bin:$PATH"
