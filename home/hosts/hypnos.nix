@@ -57,6 +57,7 @@
       nix-tree
       sops
       age
+      direnv
     ]
   );
 }
