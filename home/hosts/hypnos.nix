@@ -15,6 +15,7 @@
     ../modules/zsh.nix
     ../modules/llm.nix
     ../modules/ssh.nix
+    ../modules/nix-config.nix
     ../modules/atuin.nix
     ../modules/git.nix
   ];
