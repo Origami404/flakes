@@ -18,6 +18,7 @@
     ../modules/nix-config.nix
     ../modules/atuin.nix
     ../modules/git.nix
+    ../modules/direnv.nix
   ];
 
   programs.zsh.shellAliases = {
@@ -58,7 +59,6 @@
       nix-tree
       sops
       age
-      direnv
     ]
   );
 }
