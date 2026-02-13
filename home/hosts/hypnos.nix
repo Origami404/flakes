@@ -59,6 +59,10 @@
       nix-tree
       sops
       age
+
+      # 其他软件开发包
+      rustup
+      graphviz
     ]
   );
 }
