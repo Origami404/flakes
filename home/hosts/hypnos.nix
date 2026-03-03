@@ -43,12 +43,15 @@
       gnumake
       pkgconf
       unar
+      tree
+      xz
 
       # 命令行小工具
       helix
       uv
       typst
       pandoc
+      rsync
 
       # NixOS
       nix-output-monitor
