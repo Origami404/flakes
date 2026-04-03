@@ -29,6 +29,12 @@
   # 外壳同款配色
   programs.zsh.initContent = "zstyle ':prompt:grml:*:items:user' pre '%F{#82C8E5}'";
 
+  # 虽然有些邪恶, 但是有些应用必须用 brew 装更新才够快
+  programs.zsh.sessionVariables = {
+    PATH = "/opt/homebrew/bin:\$PATH";
+    TERM = "xterm-256color";
+  };
+
   # 包
   home.packages = (
     with pkgs;
@@ -45,6 +51,7 @@
       unar
       tree
       xz
+      pigz
 
       # 命令行小工具
       helix
@@ -65,6 +72,8 @@
 
       # 其他软件开发包
       rustup
+      fnm
+      opam
       graphviz
     ]
   );

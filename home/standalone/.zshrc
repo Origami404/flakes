@@ -24,3 +24,11 @@ export EDITOR=hx
 alias dc="docker compose"
 
 export PATH="$HOME/.local/bin:$PATH"
+
+if command -v fnm &> /dev/null; then
+    eval "$(fnm env --use-on-cd --shell zsh)"
+fi
+
+if command -v opam &> /dev/null; then
+    eval $(opam env)
+fi
