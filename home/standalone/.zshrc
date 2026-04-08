@@ -2,6 +2,8 @@
 
 ZSHD="$HOME/.zsh.d"
 
+source "$ZSHD/normalize-fpath.zsh"
+
 if [[ ! -v ZSH_GRML_SOURCED ]]; then
   source $ZSHD/grml-zshrc
 fi
