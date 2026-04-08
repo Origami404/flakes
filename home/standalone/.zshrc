@@ -34,3 +34,7 @@ fi
 if command -v opam &> /dev/null; then
     eval $(opam env)
 fi
+
+if command -v tea &> /dev/null; then
+    eval $(tea completion zsh)
+fi

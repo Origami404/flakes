@@ -59,6 +59,8 @@
       typst
       pandoc
       rsync
+      wget
+      tea
 
       # NixOS
       nix-output-monitor
