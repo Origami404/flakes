@@ -36,5 +36,6 @@ if command -v opam &> /dev/null; then
 fi
 
 if command -v tea &> /dev/null; then
-    source <(tea completion zsh)
+    # this can only use eval, dont know why
+    eval $(tea completion zsh)
 fi
