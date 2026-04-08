@@ -15,12 +15,12 @@
     scc # better cloc
     btop # better top
     grc # log file colorize
-    neofetch # tool for showing off 
+    fastfetch # show off
     mtr       # better traceroute
-    iperf3    
+    iperf3
     q         # better dig/nslookup
     socat     # better netcat
-    nmap 
+    nmap
   ];
 
   programs.nix-index.enableFishIntegration = true;
