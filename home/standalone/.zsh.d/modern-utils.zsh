@@ -1,8 +1,8 @@
 # if bat is installed, alias cat to it
-if command -v bat &> /dev/null; then
-    alias cat='bat'
-    alias pcat='/usr/bin/cat'
-fi
+# if command -v bat &> /dev/null; then
+#     alias cat='bat'
+#     alias pcat='/usr/bin/cat'
+# fi
 
 # if eza is installed, alias ls to it; also check exa
 if command -v eza &> /dev/null; then
@@ -25,9 +25,9 @@ fi
 if command -v ripgrep &> /dev/null; then
     alias rg='rgrep'
 fi
-if command -v rg &> /dev/null; then
-    alias grep='rg'
-fi
+# if command -v rg &> /dev/null; then
+#     alias grep='rg'
+# fi
 
 # Compatibility with windows
 alias traceroute='tracert'
